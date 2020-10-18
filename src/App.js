@@ -1,19 +1,32 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/Counter';
+import Navbar from "./components/Navbar";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Pisano from './pages/Pisano/Pisano';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <div className="app-card">
-              <div className={"centered"}>
-                  <h2>Fibonacci Counter</h2>
-                  <Counter />
-              </div>
-          </div>
-      </header>
-    </div>
+
+    return (
+        <div className="App">
+            <header className="App-header">
+              <Router>
+                  <Navbar/>
+                  <Switch>
+                      <Route exact path="/">
+                          <Home />
+                      </Route>
+                      <Route path="/about">
+                          <Pisano />
+                      </Route>
+                  </Switch>
+              </Router>
+            </header>
+        </div>
   );
 }
 
