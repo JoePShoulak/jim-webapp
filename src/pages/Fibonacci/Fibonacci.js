@@ -3,7 +3,7 @@ import Counter from "../../components/Counter";
 
 const Fibonacci = () => {
     return(
-        <div>
+        <div className={"page-wrapper"}>
             <h1>Fibonacci Counter</h1>
             <Counter />
         </div>

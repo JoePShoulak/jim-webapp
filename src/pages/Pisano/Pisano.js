@@ -7,7 +7,7 @@ const Pisano = () => {
     const defaultHeight = 5;
 
     return(
-        <div className={"pisano-wrapper"}>
+        <div className={"page-wrapper"}>
             <h1>Pisano</h1>
             <Array modulus={defaultModulus} height={defaultHeight}/>
         </div>

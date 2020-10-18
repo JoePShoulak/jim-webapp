@@ -16,15 +16,15 @@
   color: #61dafb;
 }
 
+.page-wrapper {
+  position: fixed;
+  top: 100px;
+}
+
 .counter-wrapper button {
   width: 50px;
   margin-left: 5px;
   margin-right: 5px;
-}
-
-.pisano-wrapper {
-  position: fixed;
-  top: 50px;
 }
 
 .navbar {
