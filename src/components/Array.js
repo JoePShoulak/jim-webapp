@@ -53,7 +53,7 @@ const Array = (props) => {
     }
 
     return(
-        <div>
+        <div className={"array-wrapper"}>
             <p>The Pisano Period of Modulus {modulus} is {period}</p>
             <p>Array is valid: {validArray.toString()}</p>
             <p>Modulus: {modulus} Height: {height} Period: {period}</p>

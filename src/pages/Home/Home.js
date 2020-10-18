@@ -1,11 +1,10 @@
 import React from 'react';
-import Counter from "../../components/Counter";
 
 const Home = () => {
     return(
         <div>
-            <h1>Fibonacci Counter</h1>
-            <Counter />
+            <h1>Coming soon</h1>
+            <p>Home page placeholder</p>
         </div>
     )
 }

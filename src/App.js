@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Pisano from './pages/Pisano/Pisano';
+import Fibonacci from './pages/Fibonacci/Fibonacci';
 
 function App() {
 
@@ -19,6 +20,9 @@ function App() {
                   <Switch>
                       <Route exact path="/">
                           <Home />
+                      </Route>
+                      <Route path="/fibonacci">
+                          <Fibonacci />
                       </Route>
                       <Route path="/pisano">
                           <Pisano />
