@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home/Home";
 import Pisano from './pages/Pisano/Pisano';
 import Fibonacci from './pages/Fibonacci/Fibonacci';
+import About from "./pages/About/About";
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
                   <Switch>
                       <Route exact path="/">
                           <Home />
+                      </Route>
+                      <Route path="/about">
+                          <About />
                       </Route>
                       <Route path="/fibonacci">
                           <Fibonacci />

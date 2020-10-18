@@ -3,11 +3,13 @@ import Array from "../../components/Array"
 
 
 const Pisano = () => {
+    const defaultModulus = 10;
+    const defaultHeight = 5;
 
     return(
         <div>
             <h1>Pisano</h1>
-            <Array modulus={3} height={2}/>
+            <Array modulus={defaultModulus} height={defaultHeight}/>
         </div>
     )
 }
