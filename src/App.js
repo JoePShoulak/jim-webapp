@@ -10,15 +10,16 @@ import Home from "./pages/Home/Home";
 import Pisano from './pages/Pisano/Pisano';
 import Fibonacci from './pages/Fibonacci/Fibonacci';
 import About from "./pages/About/About";
+import Footer from "./components/Footer";
 
 function App() {
 
     return (
         <div className="App">
             <header className="App-header">
-              <Router>
-                  <Navbar/>
-                  <Switch>
+                <Router>
+                <Navbar/>
+                    <Switch>
                       <Route exact path="/">
                           <Home />
                       </Route>
@@ -31,9 +32,10 @@ function App() {
                       <Route path="/pisano">
                           <Pisano />
                       </Route>
-                  </Switch>
-              </Router>
+                    </Switch>
+                </Router>
             </header>
+            <Footer />
         </div>
   );
 }
