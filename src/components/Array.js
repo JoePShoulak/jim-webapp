@@ -1,33 +1,68 @@
 import React, {useState} from 'react';
+import {FindPeriod} from "../helpers/mathHelper";
 
 const Array = (props) => {
     const [modulus, setModulus] = useState(props.modulus);
+    const [period, setPeriod] = useState(FindPeriod(modulus));
+    const [height, setHeight] = useState(props.height);
+    const [validArray, setValidArray] = useState(period/height === Math.round(period/height))
 
-    const findPeriod = (m) => {
-        let a = 1;
-        let b = 1;
+    const updateModulusFromInput = (e) => {
+        const m = e.target.value;
 
-        let itCount = 1;
-
-        while (!(a === 0 && b === 1)) {
-            itCount++;
-
-            let c = a;
-            a = b;
-            b = (b + c) % m;
-        }
-
-        return itCount;
+        setModulus(m);
+        setPeriod(FindPeriod(m));
+        setValidArray(period/height === Math.round(period/height));
     }
 
-    const updateFromInput = (e) => {
-        setModulus(e.target.value)
+    const updateHeightFromInput = (e) => {
+        const h = e.target.value
+
+        setHeight(h);
+        setValidArray(period/h === Math.round(period/h));
+    }
+
+    const makeTable = (modulus, height) => {
+        let fibCurrent = 1;
+        let fibNext = 1;
+
+        let data = [1];
+
+        while (!(fibCurrent === 0 && fibNext === 1)) {
+            data.push(fibNext);
+
+            let fibPrevious = fibCurrent;
+            fibCurrent = fibNext;
+            fibNext = (fibCurrent + fibPrevious) % modulus;
+        }
+
+        let tabulatedData = [];
+        const period = data.length;
+
+        for (let i=0; i<height; i++) {
+            let row = [];
+
+            let j = i;
+            while (j < period) {
+                let pNum = data[j];
+
+                row.push(pNum);
+                j += height;
+            }
+
+            tabulatedData.push(row);
+        }
+
+        return tabulatedData
     }
 
     return(
         <div>
-            <p>The Pisano Period of Modulus {modulus} is {findPeriod(modulus)}</p>
-            <input type={"number"} value={modulus} onChange={(e) => updateFromInput(e)} />
+            <p>The Pisano Period of Modulus {modulus} is {period}</p>
+            <p>Array is valid: {validArray.toString()}</p>
+            <p>Modulus: {modulus} Height: {height} Period: {period}</p>
+            <label>Modulus: </label><input type={"number"} value={modulus} onChange={ (e) => updateModulusFromInput(e) } /> <br />
+            <label>Height:  </label><input type={"number"} value={height}  onChange={ (e) => updateHeightFromInput(e)  } />
         </div>
     )
 };
