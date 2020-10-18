@@ -14,23 +14,14 @@ const formatTableRows = (table) => {
 }
 
 const DisplayTable = (table, validArray) => {
-    let response;
-
     switch (validArray) {
         case true:
-            response = (
-                <table><thead>{formatTableRows(table)}</thead></table>
-            )
-            break;
+            return <table><thead>{formatTableRows(table)}</thead></table>
         case false:
-            response = <p>Invalid array, check your parameters</p>
-            break;
+            return <p>Invalid array, check your parameters</p>
         default:
-            response =  <p>Something really strange happened, unable to display array</p>
-            break;
+            return <p>Something really strange happened, unable to display array</p>
     }
-
-    return response;
 }
 
 export default DisplayTable;
