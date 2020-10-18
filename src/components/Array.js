@@ -22,6 +22,10 @@ const Array = (props) => {
         setValidArray(period/h === Math.round(period/h));
     }
 
+    const formatTable = (table) => {
+        return table.map(row => <tr> {row.map(item => <td>{item}</td>)} </tr>)
+    }
+
     const displayTable = (table) => {
         let response;
 
@@ -31,7 +35,7 @@ const Array = (props) => {
                     <div>
                         <table>
                             <thead>
-                            { table.map(row => <tr> {row.map(item => <td>{item}</td>)} </tr>) }
+                                {formatTable(table)}
                             </thead>
                         </table>
                     </div>

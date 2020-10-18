@@ -86,3 +86,18 @@
 .navbar li:hover {
   background-color: #111;
 }
+
+table {
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+table tbody tr {
+  width: auto;
+}
