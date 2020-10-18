@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import Navbar from "./components/Navbar";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Pisano from './pages/Pisano/Pisano';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Home      from "./pages/Home/Home";
+import About     from "./pages/About/About";
 import Fibonacci from './pages/Fibonacci/Fibonacci';
-import About from "./pages/About/About";
+import Pisano    from './pages/Pisano/Pisano';
+
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,23 +15,15 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Router>
+                <BrowserRouter>
                 <Navbar/>
                     <Switch>
-                      <Route exact path="/">
-                          <Home />
-                      </Route>
-                      <Route path="/about">
-                          <About />
-                      </Route>
-                      <Route path="/fibonacci">
-                          <Fibonacci />
-                      </Route>
-                      <Route path="/pisano">
-                          <Pisano />
-                      </Route>
+                      <Route exact path="/">    <Home />      </Route>
+                      <Route path="/about">     <About />     </Route>
+                      <Route path="/fibonacci"> <Fibonacci /> </Route>
+                      <Route path="/pisano">    <Pisano />    </Route>
                     </Switch>
-                </Router>
+                </BrowserRouter>
             </header>
             <Footer />
         </div>

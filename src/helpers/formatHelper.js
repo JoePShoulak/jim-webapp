@@ -1,7 +1,7 @@
 import React from "react";
 
-const formatTable = (table) => {
-    return table.map(row => <tr>{row.map(item =><td>{item}</td>)}</tr>)
+const formatTableRows = (table) => {
+    return table.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)
 }
 
 const DisplayTable = (table, validArray) => {
@@ -10,13 +10,7 @@ const DisplayTable = (table, validArray) => {
     switch (validArray) {
         case true:
             response = (
-                <div>
-                    <table>
-                        <thead>
-                        {formatTable(table)}
-                        </thead>
-                    </table>
-                </div>
+                <table><thead>{formatTableRows(table)}</thead></table>
             )
             break;
         case false:

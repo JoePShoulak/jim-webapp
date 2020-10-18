@@ -1,20 +1,3 @@
-const FindPeriod = (m) => {
-    let a = 1;
-    let b = 1;
-
-    let itCount = 1;
-
-    while (!(a === 0 && b === 1)) {
-        itCount++;
-
-        let c = a;
-        a = b;
-        b = (b + c) % m;
-    }
-
-    return itCount;
-}
-
 const Binet = (n) => {
     const root5 = Math.pow(5, 0.5);
     const phi = (1 + root5)/2.0;
@@ -60,7 +43,7 @@ const MakeTable = (modulus, height) => {
         tabulatedData.push(row);
     }
 
-    return tabulatedData
+    return [tabulatedData, period]
 }
 
-export {FindPeriod, Binet, MakeTable};
+export {Binet, MakeTable};
