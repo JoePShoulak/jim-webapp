@@ -56,6 +56,12 @@ const Array = (props) => {
         return tabulatedData
     }
 
+    const displayTable = (modulus, height) => {
+        const table = makeTable(modulus, height);
+
+        return table.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)
+    }
+
     return(
         <div>
             <p>The Pisano Period of Modulus {modulus} is {period}</p>
@@ -63,6 +69,11 @@ const Array = (props) => {
             <p>Modulus: {modulus} Height: {height} Period: {period}</p>
             <label>Modulus: </label><input type={"number"} value={modulus} onChange={ (e) => updateModulusFromInput(e) } /> <br />
             <label>Height:  </label><input type={"number"} value={height}  onChange={ (e) => updateHeightFromInput(e)  } />
+            <table>
+                <tbody>
+                    {displayTable(10, 5)}
+                </tbody>
+            </table>
         </div>
     )
 };
