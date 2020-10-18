@@ -1,15 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Counter = () => {
-    const [count, setCount] = React.useState(0);
-
-    const countDown = () => {
-        setCount(count - 1)
-    }
-
-    const countUp = () => {
-        setCount(count + 1)
-    }
+    const [count, setCount] = useState(0);
 
     const binet = (n) => {
         const root5 = Math.pow(5, 0.5);
@@ -21,11 +13,14 @@ const Counter = () => {
         return Math.round((num1 - num2)/root5);
     }
 
+    const updateFromInput = (e) => {
+        setCount(e.target.value)
+    }
+
     return(
         <div className={"counter-wrapper"}>
             <p>Fibonacci number {count} is: {binet(count)}</p>
-            <button onClick={countDown}>-</button>
-            <button onClick={countUp}>+</button>
+            <input type={"number"} value={count} onChange={(e) => updateFromInput(e)} />
         </div>
     );
 };
