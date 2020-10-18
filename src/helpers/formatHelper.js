@@ -13,6 +13,4 @@ const formatTableRows = (table) => {
     )
 }
 
-
-
 export {formatTableRows};

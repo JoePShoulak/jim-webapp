@@ -8,14 +8,6 @@ const binet = (n) => {                      // Use the stanford Binet formula to
     return Math.round((num1 - num2)/root5);
 }
 
-const checkNum = (num) => {                 // Modulus and Height have to be above two for the math to make any sense
-    if (num >= 2) {
-        return num;
-    } else {
-        return 2;
-    }
-}
-
 const makeList = (modulus) => {             // Returns an array containing the periodic sequence resulting from
     let fibPrevious = 0;                    // taking the Fibonacci sequence modulus m
     let fibCurrent = 1;
@@ -54,4 +46,4 @@ const makeTable = (modulus, height) => {    // Turns our 1-dimensional list into
     return [tabulatedData, period]
 }
 
-export {binet, makeTable, checkNum};
+export {binet, makeTable};

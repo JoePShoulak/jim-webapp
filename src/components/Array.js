@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import _ from 'lodash';
 
-import {makeTable, checkNum} from "../helpers/mathHelper";
+import {makeTable} from "../helpers/mathHelper";
 import PisanoTable from "./PisanoTable";
 import ErrorMessage from "./ErrorMessage";
 
@@ -21,13 +21,19 @@ const Array = (props) => {
             <input type={"number"}
                    value={modulus}
                    min={2}
-                   onChange={ (e) => setModulus(checkNum(e.target.value)) } /> <br />
+                   onChange={ (e) => {
+                       const n = e.target.value;
+                       setModulus(n >= 2 ? n : 2)
+                   } } /> <br />
 
             <label>Height:  </label>
             <input type={"number"}
                    value={height}
                    min={1}
-                   onChange={ (e) => setHeight(checkNum(e.target.value))  } /> <br />
+                   onChange={ (e) => {
+                       const n = e.target.value;
+                       setHeight(n >= 2 ? n : 2)
+                   }  } /> <br />
             {validArray ? <PisanoTable table={table}/> : <ErrorMessage type={"INVALID-ARRAY"}/>}
         </div>
     )
