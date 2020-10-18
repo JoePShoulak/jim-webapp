@@ -1,4 +1,4 @@
-const Binet = (n) => {                      // Use the stanford Binet formula to find the Nth Fibonacci number
+const binet = (n) => {                      // Use the stanford Binet formula to find the Nth Fibonacci number
     const root5 = Math.pow(5, 0.5);
     const phi = (1 + root5)/2.0;
 
@@ -8,7 +8,7 @@ const Binet = (n) => {                      // Use the stanford Binet formula to
     return Math.round((num1 - num2)/root5);
 }
 
-const CheckNum = (num) => {                 // Modulus and Height have to be above two for the math to make any sense
+const checkNum = (num) => {                 // Modulus and Height have to be above two for the math to make any sense
     if (num >= 2) {
         return num;
     } else {
@@ -34,7 +34,7 @@ const makeList = (modulus) => {             // Returns an array containing the p
     return data
 }
 
-const MakeTable = (modulus, height) => {    // Turns our 1-dimensional list into a nested array of rows
+const makeTable = (modulus, height) => {    // Turns our 1-dimensional list into a nested array of rows
     const data   = makeList(modulus);
     const period = data.length;
     const width  = period/height;
@@ -54,4 +54,4 @@ const MakeTable = (modulus, height) => {    // Turns our 1-dimensional list into
     return [tabulatedData, period]
 }
 
-export {Binet, MakeTable, CheckNum};
+export {binet, makeTable, checkNum};

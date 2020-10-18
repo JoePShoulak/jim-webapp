@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import {Binet} from "../helpers/mathHelper";
+import {binet} from "../helpers/mathHelper";
 
 const Counter = () => {
     const [count, setCount] = useState(1);
 
     return(
         <div className={"counter-wrapper"}>
-            <p>Fibonacci number {count} is: {Binet(count)}</p>
+            <p>Fibonacci number {count} is: {binet(count)}</p>
 
             <input type={"number"}
                    value={count}
-                   onChange={(e) => setCount(e.target.value)} />
+                   onChange={(e) => setCount(parseInt(e.target.value))} />
         </div>
     );
 };

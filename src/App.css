@@ -58,12 +58,15 @@
   background-color: #111;
 }
 
+.error-message {
+  color: orangered;
+}
+
 table {
   background-color: darkgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: black;
   margin-top: 15px;
   border-radius: 15px;
