@@ -8,7 +8,6 @@ const Array = (props) => {
     const [modulus, setModulus] = useState(props.modulus);
 
     const [table, period] = MakeTable(modulus, height);
-    const validArray = (period/height === Math.round(period/height))
 
     return(
         <div className={"array-wrapper"}>
@@ -26,7 +25,7 @@ const Array = (props) => {
                    min={1}
                    onChange={ (e) => setHeight(CheckNum(e.target.value))  } /> <br />
 
-            {DisplayTable(table, validArray)}
+            {DisplayTable(table)}
         </div>
     )
 };
