@@ -20,7 +20,7 @@ function App() {
                       <Route exact path="/">
                           <Home />
                       </Route>
-                      <Route path="/about">
+                      <Route path="/pisano">
                           <Pisano />
                       </Route>
                   </Switch>
