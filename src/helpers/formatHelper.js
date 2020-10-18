@@ -1,8 +1,8 @@
 import React from "react";
 
-const formatTableRows = (table) => {
-    return table.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)
-}
+const formatTableRows = (table) => (
+     table.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)
+)
 
 const DisplayTable = (table, validArray) => {
     let response;

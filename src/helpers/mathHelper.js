@@ -8,6 +8,14 @@ const Binet = (n) => {
     return Math.round((num1 - num2)/root5);
 }
 
+const CheckNum = (num) => {
+    if (num >= 2) {
+        return num;
+    } else {
+        return 2;
+    }
+}
+
 const makeList = (modulus) => {
     let fibPrevious = 0;
     let fibCurrent = 1;
@@ -46,4 +54,4 @@ const MakeTable = (modulus, height) => {
     return [tabulatedData, period]
 }
 
-export {Binet, MakeTable};
+export {Binet, MakeTable, CheckNum};

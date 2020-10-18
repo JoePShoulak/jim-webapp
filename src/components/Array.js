@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {MakeTable} from "../helpers/mathHelper";
+import {MakeTable, CheckNum} from "../helpers/mathHelper";
 import DisplayTable from "../helpers/formatHelper";
 
 const Array = (props) => {
@@ -16,14 +16,14 @@ const Array = (props) => {
             <label>Modulus: </label>
             <input type={"number"}
                    value={modulus}
-                   min={1}
-                   onChange={ (e) => setModulus(e.target.value) } /> <br />
+                   min={2}
+                   onChange={ (e) => setModulus(CheckNum(e.target.value)) } /> <br />
 
             <label>Height:  </label>
             <input type={"number"}
                    value={height}
                    min={1}
-                   onChange={ (e) => setHeight(e.target.value)  } /> <br />
+                   onChange={ (e) => setHeight(CheckNum(e.target.value))  } /> <br />
 
             {DisplayTable(table, validArray)}
         </div>
