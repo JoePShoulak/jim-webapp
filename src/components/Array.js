@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+
 import {MakeTable, CheckNum} from "../helpers/mathHelper";
-import DisplayTable from "../helpers/formatHelper";
+import DisplayTable          from "../helpers/formatHelper";
 
 const Array = (props) => {
     const [height, setHeight]   = useState(props.height);

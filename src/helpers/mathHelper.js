@@ -35,11 +35,11 @@ const makeList = (modulus) => {
 }
 
 const MakeTable = (modulus, height) => {
-    const data = makeList(modulus)
+    const data   = makeList(modulus);
+    const period = data.length;
+    const width  = period/height;
 
     let tabulatedData = [];
-    const period = data.length;
-    const width = period/height;
 
     for (let i=0; i<height; i++) {
         let row = [];
