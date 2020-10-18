@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FindPeriod} from "../helpers/mathHelper";
+import {FindPeriod, MakeTable} from "../helpers/mathHelper";
 
 const Array = (props) => {
     const [modulus, setModulus] = useState(props.modulus);
@@ -22,44 +22,30 @@ const Array = (props) => {
         setValidArray(period/h === Math.round(period/h));
     }
 
-    const makeTable = (modulus, height) => {
-        let fibCurrent = 1;
-        let fibNext = 1;
+    const displayTable = (table) => {
+        let response;
 
-        let data = [1];
-
-        while (!(fibCurrent === 0 && fibNext === 1)) {
-            data.push(fibNext);
-
-            let fibPrevious = fibCurrent;
-            fibCurrent = fibNext;
-            fibNext = (fibCurrent + fibPrevious) % modulus;
+        switch (validArray) {
+            case true:
+                response = (
+                    <div>
+                        <table>
+                            <thead>
+                            { table.map(row => <tr> {row.map(item => <td>{item}</td>)} </tr>) }
+                            </thead>
+                        </table>
+                    </div>
+                )
+                break;
+            case false:
+                response = <p>Invalid array, check your parameters</p>
+                break;
+            default:
+                response =  <p>Something really strange happened, unable to display array</p>
+                break;
         }
 
-        let tabulatedData = [];
-        const period = data.length;
-
-        for (let i=0; i<height; i++) {
-            let row = [];
-
-            let j = i;
-            while (j < period) {
-                let pNum = data[j];
-
-                row.push(pNum);
-                j += height;
-            }
-
-            tabulatedData.push(row);
-        }
-
-        return tabulatedData
-    }
-
-    const displayTable = (modulus, height) => {
-        const table = makeTable(modulus, height);
-
-        return table.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)
+        return response;
     }
 
     return(
@@ -68,12 +54,8 @@ const Array = (props) => {
             <p>Array is valid: {validArray.toString()}</p>
             <p>Modulus: {modulus} Height: {height} Period: {period}</p>
             <label>Modulus: </label><input type={"number"} value={modulus} onChange={ (e) => updateModulusFromInput(e) } /> <br />
-            <label>Height:  </label><input type={"number"} value={height}  onChange={ (e) => updateHeightFromInput(e)  } />
-            <table>
-                <tbody>
-                    {displayTable(10, 5)}
-                </tbody>
-            </table>
+            <label>Height:  </label><input type={"number"} value={height}  onChange={ (e) => updateHeightFromInput(e)  } /> <br />
+            {displayTable(MakeTable(modulus, height))}
         </div>
     )
 };

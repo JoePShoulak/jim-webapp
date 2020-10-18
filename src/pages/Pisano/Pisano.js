@@ -7,7 +7,7 @@ const Pisano = () => {
     return(
         <div>
             <h1>Pisano</h1>
-            <Array modulus={10} height={5}/>
+            <Array modulus={3} height={2}/>
         </div>
     )
 }

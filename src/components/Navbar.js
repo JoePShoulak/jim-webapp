@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 
 const Navbar = () => {
-    return(
+    return( // TODO Why is this weird?
         <div className={"navbar"}>
             <ul>
                 <li><Link className={"link"} to="/">Home</Link></li>
