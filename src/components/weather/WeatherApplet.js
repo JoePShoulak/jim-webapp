@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
 const WeatherApplet = () => {
-    document.title = "Joe's App - Weather";
     const [weather, setWeather] = useState(undefined);
 
     useEffect( () => {
@@ -16,16 +15,16 @@ const WeatherApplet = () => {
     return(
         <div>
             {(weather !== undefined) ? (
-                <div>
+                <>
                     {console.log(weather)}
-                    <p>The temp is: {weather.temperature}F</p>
-                    <p>...but it feels like: {weather.feelslike}F</p>
-                    <p>The wind speed is: {weather.wind_speed}Mph</p>
-                    <p>The humidity is: {weather.humidity}%</p>
-                    <p>Precipitation: {weather.precipitation}</p>
-                    <p>Cloud Cover: {weather.cloudcover}</p>
-                </div>
-            ) : <p>Loading...</p>}
+                    <p key={"temp"}          > The temp is: {          weather.temperature}F</p>
+                    <p key={"feels_like"}    > ...but it feels like: { weather.feels_like}F</p>
+                    <p key={"wind_speed"}    > The wind speed is: {    weather.wind_speed}Mph</p>
+                    <p key={"humidity"}      > The humidity is: {      weather.humidity}%</p>
+                    <p key={"precipitation"} > Precipitation: {        weather.precipitation}</p>
+                    <p key={"cloud_cover"}   > Cloud Cover: {          weather.cloud_cover}</p>
+                </>
+            ) : <p key={"loading"}>Loading...</p>}
         </div>
     )
 }
