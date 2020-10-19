@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from "../../components/Pokemon";
+import Pokemon from "../../components/pokemon/Pokemon";
 
 const Eevee = () => {
     document.title = "Joe's App - Eevee"
@@ -7,7 +7,7 @@ const Eevee = () => {
     return(
         <div className={"page-wrapper"}>
             <h1>Eevee</h1>
-            <Pokemon pokemon={"Eevee"}/>
+            <Pokemon name={"eevee"}/>
         </div>
     )
 }
