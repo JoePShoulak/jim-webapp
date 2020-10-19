@@ -12,23 +12,17 @@ import Weather   from "./pages/Weather";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const pages = [
-    {'path': '/',          'comp': (<Home      />)},
-    {'path': '/about',     'comp': (<About     />)},
-    {'path': '/fibonacci', 'comp': (<Fibonacci />)},
-    {'path': '/pisano',    'comp': (<Pisano    />)},
-    {'path': '/pokemon',   'comp': (<Pokemon   />)},
-    {'path': '/weather',   'comp': (<Weather   />)}
-]
-
 function App() {
     return (
         <div className="App">
             <Navbar />
             <Switch>
-                {pages.map((page) => {
-                    return (<Route exact key={page.path} path={page.path}> {page.comp} </Route>)
-                })}
+                <Route exact path={'/'}>          <Home />      </Route>
+                <Route exact path={'/about'}>     <About />     </Route>
+                <Route exact path={'/fibonacci'}> <Fibonacci /> </Route>
+                <Route exact path={'/pisano'}>    <Pisano />    </Route>
+                <Route exact path={'/pokemon'}>   <Pokemon />   </Route>
+                <Route exact path={'/weather'}>   <Weather />   </Route>
 
                 <Redirect to={"/"} />
             </Switch>
