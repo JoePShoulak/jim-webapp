@@ -5,7 +5,7 @@ const Data = (props) => {
     const p = props.pokemon;
     const type = props.type;
 
-    console.log(type)
+    console.log(p)
     switch (type) {
         case "ABILITIES":
             return(
@@ -23,7 +23,16 @@ const Data = (props) => {
                     {p.stats.map((s) => {
                         return <p key={s.stat.name}>{s.stat.name} {s.base_stat}</p>
                     })}
-                </div>            )
+                </div>
+            )
+        case "TYPE(S)":
+            return(
+                <div>
+                    <h3>Type(s)</h3>
+                    {p.types.map((t) => {
+                        return <p key={t.type.name}>{t.type.name}</p>
+                    })}
+                </div>             )
         default:
             return <h3>Nothing to see here</h3>;
     }

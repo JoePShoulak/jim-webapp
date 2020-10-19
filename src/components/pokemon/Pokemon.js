@@ -25,6 +25,7 @@ const Pokemon = (props) => {
 
                         <button onClick={() => {setDataType("ABILITIES")}}>Abilities</button>
                         <button onClick={() => {setDataType("STATS")}}>Stats</button>
+                        <button onClick={() => {setDataType("TYPE(S)")}}>Type(s)</button>
 
                         <Data pokemon={el} type={dataType} />
                     </div>

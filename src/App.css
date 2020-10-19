@@ -12,8 +12,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         color: white;
+        padding-top: 65px;
 }
 
 .counter-wrapper button {

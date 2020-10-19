@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from "../../components/pokemon/Pokemon";
+import Pokemon from "../components/pokemon/Pokemon";
 
 const Eevee = () => {
     document.title = "Joe's App - Eevee"
