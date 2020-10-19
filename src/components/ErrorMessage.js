@@ -5,7 +5,7 @@ const ErrorMessage = (props) => {
 
     switch (props.type) {
         case "INVALID-ARRAY":
-            message = "Invalid array, check your parameters"
+            message = "Invalid pisano, check your parameters"
             break;
         default:
             message = "Something very strange happened..."

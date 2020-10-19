@@ -1,5 +1,5 @@
 import React from "react";
-import Array from "../components/Array"
+import Array from "../components/pisano/Array"
 
 const Pisano = () => {
     const defaultModulus = 10;

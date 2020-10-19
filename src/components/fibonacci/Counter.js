@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {fibGen} from "../helpers/mathHelper";
+import {fibGen} from "../../helpers/mathHelper";
 
 const Counter = () => {
     const [count, setCount] = useState(1);

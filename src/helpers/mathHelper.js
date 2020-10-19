@@ -12,7 +12,7 @@ const fibGen = (n) => {
     return fibNext;
 }
 
-const makeList = (modulus) => {             // Returns an array containing the periodic sequence resulting from
+const makeList = (modulus) => {             // Returns an pisano containing the periodic sequence resulting from
     let fibPrevious = 0;                    // taking the Fibonacci sequence modulus m
     let fibCurrent = 1;
     let fibNext = 1;
@@ -30,7 +30,7 @@ const makeList = (modulus) => {             // Returns an array containing the p
     return data
 }
 
-const makeTable = (modulus, height) => {    // Turns our 1-dimensional list into a nested array of rows
+const makeTable = (modulus, height) => {    // Turns our 1-dimensional list into a nested pisano of rows
     const data   = makeList(modulus);
     const period = data.length;
     const width  = period/height;

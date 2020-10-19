@@ -1,4 +1,5 @@
 import React from "react";
+import _ from 'lodash';
 
 const formatTableRows = (table) => {
     let rowKey = 0;
@@ -13,4 +14,16 @@ const formatTableRows = (table) => {
     )
 }
 
-export {formatTableRows};
+const formatPokeData = (data) => {
+    let newData;
+
+    if (_.includes(data, "-")) {
+        newData = data.split("-").map((p) => (_.capitalize(p))).join(" ")
+    } else {
+        newData = _.capitalize(data)
+    }
+
+    return newData;
+}
+
+export {formatTableRows, formatPokeData};
