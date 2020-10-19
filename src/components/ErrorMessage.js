@@ -12,10 +12,11 @@ const ErrorMessage = (props) => {
             break;
     }
 
-    return (<div className="isa_error">
-        <i className="fa fa-times-circle" />
-        {message}
-    </div>)
+    return (
+        <div className="error-message">
+            <p>{message}</p>
+        </div>
+    )
 }
 
 export default ErrorMessage;

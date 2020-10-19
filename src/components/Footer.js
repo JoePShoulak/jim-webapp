@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Navbar = () => {
+const Footer = () => {
     return(
         <footer>
-            <p>A Joe Shoulak WebApp running on Node.js</p>
+            <div>
+                <p>A Joe Shoulak WebApp running on Node.js</p>
+            </div>
         </footer>
     )
 };
 
-export default Navbar;
+export default Footer;

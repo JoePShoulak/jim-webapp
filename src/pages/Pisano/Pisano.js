@@ -8,7 +8,7 @@ const Pisano = () => {
 
     return(
         <div className={"page-wrapper"}>
-            <h1>Pisano</h1>
+            <h1 className={"title"}>Pisano</h1>
             <Array modulus={defaultModulus} height={defaultHeight}/>
         </div>
     )

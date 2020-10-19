@@ -1,113 +1,86 @@
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-.isa_info, .isa_success, .isa_warning, .isa_error {
-  margin: 10px 0;
-  padding:12px;
-
-}
-.isa_info {
-  color: #00529B;
-  background-color: #BDE5F8;
-}
-.isa_success {
-  color: #4F8A10;
-  background-color: #DFF2BF;
-}
-.isa_warning {
-  color: #9F6000;
-  background-color: #FEEFB3;
-}
-.isa_error {
-  color: #D8000C;
-  background-color: #FFD2D2;
-}
-.isa_info i, .isa_success i, .isa_warning i, .isa_error i {
-  margin:10px 22px;
-  font-size:2em;
-  vertical-align:middle;
-}
 .App {
-  text-align: center;
+        text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
 }
 
 .App-link {
-  color: #61dafb;
+        color: #61dafb;
 }
 
 .page-wrapper {
-  position: fixed;
-  top: 100px;
+        position: fixed;
+        top: 100px;
 }
 
 .counter-wrapper button {
-  width: 50px;
-  margin-left: 5px;
-  margin-right: 5px;
+        width: 50px;
+        margin-left: 5px;
+        margin-right: 5px;
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+        position: fixed;
+        top: 0;
+        width: 100%;
 }
 
 .navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
 }
 
 .navbar li {
-  float: left;
+        float: left;
 }
 
 .navbar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
 .navbar li:hover {
-  background-color: #111;
+        background-color: #111;
 }
 
 .error-message {
-  color: orangered;
+        color: orangered;
 }
 
 table {
-  background-color: darkgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: black;
-  margin-top: 15px;
-  border-radius: 15px;
+        background-color: darkgray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        margin-top: 15px;
+        border-radius: 15px;
 }
 
 table tbody tr {
-  width: auto;
+        width: auto;
 }
 
 footer {
-  color: white;
-  background-color: #333;
-  width: 100%;
-  position: fixed;
-  font-size: 10px;
-  bottom: 0;
+        color: white;
+        background-color: #333;
+        width: 100%;
+        position: fixed;
+        font-size: 10px;
+        bottom: 0;
 }
