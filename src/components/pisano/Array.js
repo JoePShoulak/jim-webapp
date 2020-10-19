@@ -6,9 +6,9 @@ import PisanoTable  from "./PisanoTable";
 import ErrorMessage from "../ErrorMessage";
 import ArrayInput from "./ArrayInput";
 
-const Array = (props) => {
-    const [height,   setHeight] = useState(props.height);
-    const [modulus, setModulus] = useState(props.modulus);
+const Array = () => {
+    const [height,   setHeight] = useState(5);
+    const [modulus, setModulus] = useState(10);
 
     const [table, period] = makeTable(modulus, height);
     const validArray = !_.includes(_.flatten(table), undefined);

@@ -4,7 +4,7 @@ import Sprites from "./Sprites";
 import Data from "./Data";
 import _ from 'lodash';
 
-const Pokemon = () => {
+const PokemonHandler = () => {
     const [pokemon, setPokemon] = useState(undefined);
     const [dataType, setDataType] = useState("ABILITIES");
     const [name, setName] = useState("eevee");
@@ -22,6 +22,7 @@ const Pokemon = () => {
 
     return (
         <div>
+            {console.log(pokemon)}
             {pokemon && (<h2>{_.capitalize(pokemon.name)}</h2>)}
 
             {pokemon && [pokemon].map( (el) => {
@@ -44,5 +45,5 @@ const Pokemon = () => {
     )
 }
 
-export default Pokemon;
+export default PokemonHandler;
 

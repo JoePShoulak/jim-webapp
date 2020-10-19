@@ -6,7 +6,8 @@ import Home      from "./pages/Home";
 import About     from "./pages/About";
 import Fibonacci from './pages/Fibonacci';
 import Pisano    from './pages/Pisano';
-import Eevee     from "./pages/Eevee";
+import Pokemon   from "./pages/Pokemon";
+import Weather   from "./pages/Weather";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -20,7 +21,8 @@ function App() {
                 <Route path="/about">     <About />     </Route>
                 <Route path="/fibonacci"> <Fibonacci /> </Route>
                 <Route path="/pisano">    <Pisano />    </Route>
-                <Route path="/eevee">     <Eevee />     </Route>
+                <Route path="/pokemon">   <Pokemon />   </Route>
+                <Route path="/weather">   <Weather />   </Route>
 
                 <Redirect to={"/"} />
             </Switch>
