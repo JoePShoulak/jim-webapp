@@ -1,11 +1,15 @@
-const binet = (n) => {                      // Use the stanford Binet formula to find the Nth Fibonacci number
-    const root5 = Math.pow(5, 0.5);
-    const phi = (1 + root5)/2.0;
+const fibGen = (n) => {
+    let fibPrevious = 0;                    // taking the Fibonacci sequence modulus m
+    let fibCurrent = 1;
+    let fibNext = 1;
 
-    const num1 = Math.pow(phi, n);
-    const num2 = Math.pow( (-phi), (-n) );
+    for (let i=2; i<n; i++) {
+        fibPrevious = fibCurrent;
+        fibCurrent = fibNext;
+        fibNext = (fibCurrent + fibPrevious);
+    }
 
-    return Math.round((num1 - num2)/root5);
+    return fibNext;
 }
 
 const makeList = (modulus) => {             // Returns an array containing the periodic sequence resulting from
@@ -46,4 +50,4 @@ const makeTable = (modulus, height) => {    // Turns our 1-dimensional list into
     return [tabulatedData, period]
 }
 
-export {binet, makeTable};
+export {fibGen, makeTable};

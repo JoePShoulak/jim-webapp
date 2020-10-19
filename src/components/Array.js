@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import _ from 'lodash';
 
-import {makeTable} from "../helpers/mathHelper";
-import PisanoTable from "./PisanoTable";
+import {makeTable}  from "../helpers/mathHelper";
+import PisanoTable  from "./PisanoTable";
 import ErrorMessage from "./ErrorMessage";
 
 const Array = (props) => {
-    const [height, setHeight]   = useState(props.height);
+    const [height,   setHeight] = useState(props.height);
     const [modulus, setModulus] = useState(props.modulus);
 
     const [table, period] = makeTable(modulus, height);
-    const data  = _.flatten(table);
+    const data       =  _.flatten(table);
     const validArray = !_.includes(data, undefined);
 
     return(
@@ -29,7 +29,7 @@ const Array = (props) => {
             <label>Height:  </label>
             <input type={"number"}
                    value={height}
-                   min={1}
+                   min={2}
                    onChange={ (e) => {
                        const n = e.target.value;
                        setHeight(n >= 2 ? n : 2)
