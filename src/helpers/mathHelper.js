@@ -1,5 +1,5 @@
 const fibGen = (n) => {
-    let fibPrevious = 0;                    // taking the Fibonacci sequence modulus m
+    let fibPrevious = 0;                    // taking the FibonacciPage sequence modulus m
     let fibCurrent = 1;
     let fibNext = 1;
 
@@ -13,7 +13,7 @@ const fibGen = (n) => {
 }
 
 const makeList = (modulus) => {             // Returns an pisano containing the periodic sequence resulting from
-    let fibPrevious = 0;                    // taking the Fibonacci sequence modulus m
+    let fibPrevious = 0;                    // taking the FibonacciPage sequence modulus m
     let fibCurrent = 1;
     let fibNext = 1;
 

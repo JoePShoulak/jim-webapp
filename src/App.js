@@ -2,12 +2,12 @@ import React from 'react';
 import {Switch, Route, Redirect, BrowserRouter} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
-import Home      from "./pages/Home";
-import About     from "./pages/About";
-import Fibonacci from './pages/Fibonacci';
-import Pisano    from './pages/Pisano';
-import Pokemon   from "./pages/Pokemon";
-import Weather   from "./pages/Weather";
+import HomePage      from "./pages/HomePage";
+import AboutPage     from "./pages/AboutPage";
+import FibonacciPage from './pages/FibonacciPage';
+import PisanoPage    from './pages/PisanoPage';
+import PokemonPage   from "./pages/PokemonPage";
+import WeatherPage   from "./pages/WeatherPage";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,12 +19,12 @@ function App() {
             <Grid container justify={'center'}>
                 <Grid item xs={6}>
                     <Switch>
-                        <Route exact path={'/'}>          <Home />      </Route>
-                        <Route exact path={'/about'}>     <About />     </Route>
-                        <Route exact path={'/fibonacci'}> <Fibonacci /> </Route>
-                        <Route exact path={'/pisano'}>    <Pisano />    </Route>
-                        <Route exact path={'/pokemon'}>   <Pokemon />   </Route>
-                        <Route exact path={'/weather'}>   <Weather />   </Route>
+                        <Route exact path={'/'}>          <HomePage />      </Route>
+                        <Route exact path={'/about'}>     <AboutPage />     </Route>
+                        <Route exact path={'/fibonacci'}> <FibonacciPage /> </Route>
+                        <Route exact path={'/pisano'}>    <PisanoPage />    </Route>
+                        <Route exact path={'/pokemon'}>   <PokemonPage />   </Route>
+                        <Route exact path={'/weather'}>   <WeatherPage />   </Route>
 
                         <Redirect to={"/"} />
                     </Switch>

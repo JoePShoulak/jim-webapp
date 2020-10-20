@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {fibGen} from "../../helpers/mathHelper";
 
-const Counter = () => {
+const Fibonacci = () => {
     const [count, setCount] = useState(1);
 
     return(
@@ -15,4 +15,4 @@ const Counter = () => {
     );
 };
 
-export default Counter;
+export default Fibonacci;

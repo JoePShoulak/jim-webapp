@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArrayInput = (props) => {
+const PisanoInput = (props) => {
     const {label, value, func} = props;
     return(
         <div>
@@ -14,4 +14,4 @@ const ArrayInput = (props) => {
     )
 }
 
-export default ArrayInput;
+export default PisanoInput;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Paper, Typography} from "@material-ui/core";
 
-const Home = () => {
+const AboutPage = () => {
     document.title = "Joe's App - About"
 
     return(
@@ -12,4 +12,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default AboutPage;

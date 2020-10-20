@@ -1,18 +1,18 @@
 import React from "react";
-import Array from "../components/pisano/Array"
+import Pisano from "../components/pisano/Pisano"
 import Paper from "@material-ui/core/Paper";
 import {Typography} from "@material-ui/core";
 
-const Pisano = () => {
+const PisanoPage = () => {
 
-    document.title = "Joe's App - Pisano"
+    document.title = "Joe's App - PisanoPage"
 
     return(
         <Paper>
             <Typography variant={'h1'}>Pisano</Typography>
-            <Array />
+            <Pisano />
         </Paper>
     )
 }
 
-export default Pisano;
+export default PisanoPage;

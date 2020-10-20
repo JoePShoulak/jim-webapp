@@ -4,9 +4,9 @@ import _ from 'lodash';
 import {makeTable}  from "../../helpers/mathHelper";
 import PisanoTable  from "./PisanoTable";
 import ErrorMessage from "../ErrorMessage";
-import ArrayInput from "./ArrayInput";
+import PisanoInput from "./PisanoInput";
 
-const Array = () => {
+const Pisano = () => {
     const [height,   setHeight] = useState(5);
     const [modulus, setModulus] = useState(10);
 
@@ -17,12 +17,12 @@ const Array = () => {
         <div className={"pisano-wrapper"}>
             <p>The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}</p>
 
-            <ArrayInput label={"Modulus"} value={modulus}
-                        func={(e) => {setModulus(e.target.value >= 2 ? e.target.value : 2) }}
+            <PisanoInput label={"Modulus"} value={modulus}
+                         func={(e) => {setModulus(e.target.value >= 2 ? e.target.value : 2) }}
             />
 
-            <ArrayInput label={"Height"} value={height}
-                        func={(e) => {setHeight(e.target.value >= 2 ? e.target.value : 2) }}
+            <PisanoInput label={"Height"} value={height}
+                         func={(e) => {setHeight(e.target.value >= 2 ? e.target.value : 2) }}
             />
 
             {validArray ? <PisanoTable table={table}/> : <ErrorMessage type={"INVALID-ARRAY"}/>}
@@ -30,4 +30,4 @@ const Array = () => {
     )
 };
 
-export default Array;
+export default Pisano;

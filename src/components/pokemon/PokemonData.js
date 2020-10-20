@@ -1,7 +1,7 @@
 import React from 'react';
 import {formatPokeData} from "../../helpers/formatHelper";
 
-const Data = (props) => {
+const PokemonData = (props) => {
 
     const p = props.pokemon;
     const type = props.type;
@@ -48,5 +48,5 @@ const Data = (props) => {
     }
 }
 
-export default Data;
+export default PokemonData;
 

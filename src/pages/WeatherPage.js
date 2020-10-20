@@ -1,17 +1,17 @@
 import React from 'react';
-import WeatherApplet from "../components/weather/WeatherApplet";
+import Weather from "../components/weather/Weather";
 import Paper from "@material-ui/core/Paper";
 import {Typography} from "@material-ui/core";
 
-const Weather = () => {
-    document.title = "Joe's App - Weather";
+const WeatherPage = () => {
+    document.title = "Joe's App - WeatherPage";
 
     return(
         <Paper>
             <Typography variant={'h1'}>Weather</Typography>
-            <WeatherApplet />
+            <Weather />
         </Paper>
     )
 }
 
-export default Weather;
+export default WeatherPage;

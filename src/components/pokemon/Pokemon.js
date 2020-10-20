@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Sprites from "./Sprites";
-import Data from "./Data";
+import PokemonSprites from "./PokemonSprites";
+import PokemonData from "./PokemonData";
 import _ from 'lodash';
 
-const PokemonHandler = () => {
+const Pokemon = () => {
     const [pokemon, setPokemon] = useState(undefined);
     const [dataType, setDataType] = useState("ABILITIES");
     const [name, setName] = useState("eevee");
@@ -28,7 +28,7 @@ const PokemonHandler = () => {
             {pokemon && [pokemon].map( (el) => {
                 return(
                     <div key={el.name}>
-                        <Sprites pokemon={el}/>
+                        <PokemonSprites pokemon={el}/>
 
                         <button onClick={() => {setDataType("ABILITIES")}}>Abilities</button>
                         <button onClick={() => {setDataType("STATS")}}>Stats</button>
@@ -36,7 +36,7 @@ const PokemonHandler = () => {
                         <button onClick={() => {setDataType("FIRST-VERSION")}}>First Available Version</button>
                         <button onClick={() => {setName(String(randomPokemon()))}}>Random Pokemon</button>
 
-                        <Data pokemon={el} type={dataType} />
+                        <PokemonData pokemon={el} type={dataType} />
                     </div>
                 )
             })
@@ -45,5 +45,5 @@ const PokemonHandler = () => {
     )
 }
 
-export default PokemonHandler;
+export default Pokemon;
 

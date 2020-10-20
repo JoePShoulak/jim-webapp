@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-const WeatherApplet = () => {
+const Weather = () => {
     const [weather, setWeather] = useState(undefined);
 
     useEffect( () => {
@@ -29,4 +29,4 @@ const WeatherApplet = () => {
     )
 }
 
-export default WeatherApplet;
+export default Weather;

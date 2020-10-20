@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sprites = (props) => {
+const PokemonSprites = (props) => {
 
     const s = props.pokemon.sprites
 
@@ -13,5 +13,5 @@ const Sprites = (props) => {
     )
 }
 
-export default Sprites;
+export default PokemonSprites;
 
