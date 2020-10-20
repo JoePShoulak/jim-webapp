@@ -1,14 +1,16 @@
 import React from 'react';
 import Counter from "../components/fibonacci/Counter";
+import {Typography} from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
 
 const Fibonacci = () => {
     document.title = "Joe's App - Fibonacci"
 
     return(
-        <div className={"page-wrapper"}>
-            <h1>Fibonacci Counter</h1>
+        <Paper>
+            <Typography variant={'h1'}>Weather</Typography>
             <Counter />
-        </div>
+        </Paper>
     )
 }
 

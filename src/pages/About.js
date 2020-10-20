@@ -1,13 +1,14 @@
 import React from 'react';
+import {Paper, Typography} from "@material-ui/core";
 
 const Home = () => {
     document.title = "Joe's App - About"
 
     return(
-        <div className={"page-wrapper"}>
-            <h1>Coming soon</h1>
-            <p>About page placeholder</p>
-        </div>
+        <Paper>
+            <Typography variant={'h1'}>About</Typography>
+            <Typography>More to see later</Typography>
+        </Paper>
     )
 }
 

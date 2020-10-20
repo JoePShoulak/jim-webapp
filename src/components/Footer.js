@@ -1,12 +1,14 @@
 import React from 'react';
+import Card from "@material-ui/core/Card";
+import {CardContent} from "@material-ui/core";
 
 const Footer = () => {
     return(
-        <footer>
-            <div>
+        <Card>
+            <CardContent>
                 <p>A Joe Shoulak WebApp running on Node.js</p>
-            </div>
-        </footer>
+            </CardContent>
+        </Card>
     )
 };
 

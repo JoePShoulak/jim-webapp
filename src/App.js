@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route, Redirect } from "react-router-dom";
+import {Switch, Route, Redirect, BrowserRouter} from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
 
 import Home      from "./pages/Home";
 import About     from "./pages/About";
@@ -13,21 +14,26 @@ import Footer from "./components/Footer";
 
 function App() {
     return (
-        <div className="App">
+        <BrowserRouter>
             <Navbar />
-            <Switch>
-                <Route exact path={'/'}>          <Home />      </Route>
-                <Route exact path={'/about'}>     <About />     </Route>
-                <Route exact path={'/fibonacci'}> <Fibonacci /> </Route>
-                <Route exact path={'/pisano'}>    <Pisano />    </Route>
-                <Route exact path={'/pokemon'}>   <Pokemon />   </Route>
-                <Route exact path={'/weather'}>   <Weather />   </Route>
+            <Grid container justify={'center'}>
+                <Grid item xs={6}>
+                    <Switch>
+                        <Route exact path={'/'}>          <Home />      </Route>
+                        <Route exact path={'/about'}>     <About />     </Route>
+                        <Route exact path={'/fibonacci'}> <Fibonacci /> </Route>
+                        <Route exact path={'/pisano'}>    <Pisano />    </Route>
+                        <Route exact path={'/pokemon'}>   <Pokemon />   </Route>
+                        <Route exact path={'/weather'}>   <Weather />   </Route>
 
-                <Redirect to={"/"} />
-            </Switch>
+                        <Redirect to={"/"} />
+                    </Switch>
+
+                </Grid>
+            </Grid>
             <Footer />
-        </div>
-  );
+        </BrowserRouter>
+    );
 }
 
 export default App;
