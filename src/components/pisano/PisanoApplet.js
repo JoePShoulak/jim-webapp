@@ -5,8 +5,11 @@ import {makeTable}  from "../../helpers/mathHelper";
 import PisanoTable  from "./PisanoTable";
 import ErrorMessage from "../ErrorMessage";
 import PisanoInput from "./PisanoInput";
+import Card from "@material-ui/core/Card";
+import Typography from "@material-ui/core/Typography";
+import CardContent from "@material-ui/core/CardContent";
 
-const Pisano = () => {
+const PisanoApplet = () => {
     const [height,   setHeight] = useState(5);
     const [modulus, setModulus] = useState(10);
 
@@ -14,8 +17,9 @@ const Pisano = () => {
     const validArray = !_.includes(_.flatten(table), undefined);
 
     return(
-        <div className={"pisano-wrapper"}>
-            <p>The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}</p>
+        <Card>
+            <CardContent>
+            <Typography>The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}</Typography>
 
             <PisanoInput label={"Modulus"} value={modulus}
                          func={(e) => {setModulus(e.target.value >= 2 ? e.target.value : 2) }}
@@ -26,8 +30,9 @@ const Pisano = () => {
             />
 
             {validArray ? <PisanoTable table={table}/> : <ErrorMessage type={"INVALID-ARRAY"}/>}
-        </div>
+            </CardContent>
+        </Card>
     )
 };
 
-export default Pisano;
+export default PisanoApplet;

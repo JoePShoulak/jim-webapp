@@ -1,17 +1,24 @@
 import React from "react";
-import Pisano from "../components/pisano/Pisano"
-import Paper from "@material-ui/core/Paper";
-import {Typography} from "@material-ui/core";
+
+import {CardContent, Typography} from "@material-ui/core";
+import Card from "@material-ui/core/Card";
+
+import PisanoApplet from "../components/pisano/PisanoApplet"
+import {myClasses} from "../theme";
 
 const PisanoPage = () => {
 
     document.title = "Joe's App - PisanoPage"
 
+    const classes = myClasses();
+
     return(
-        <Paper>
-            <Typography variant={'h1'}>Pisano</Typography>
-            <Pisano />
-        </Paper>
+        <Card className={classes.main}>
+            <CardContent>
+                <Typography align={'center'} variant={'h1'}>Pisano</Typography>
+                <PisanoApplet />
+            </CardContent>
+        </Card>
     )
 }
 

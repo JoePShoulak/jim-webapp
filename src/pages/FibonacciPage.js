@@ -1,16 +1,23 @@
 import React from 'react';
-import Fibonacci from "../components/fibonacci/Fibonacci";
+
 import {Typography} from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
+import {Card, CardContent} from "@material-ui/core";
+
+import FibonacciApplet from "../components/fibonacci/FibonacciApplet";
+import {myClasses} from "../theme";
 
 const FibonacciPage = () => {
     document.title = "Joe's App - FibonacciPage"
 
+    const classes = myClasses();
+
     return(
-        <Paper>
-            <Typography variant={'h1'}>Fibonacci</Typography>
-            <Fibonacci />
-        </Paper>
+        <Card className={classes.main}>
+            <CardContent>
+                <Typography align={'center'} variant={'h1'}>Fibonacci</Typography>
+                <FibonacciApplet />
+            </CardContent>
+        </Card>
     )
 }
 

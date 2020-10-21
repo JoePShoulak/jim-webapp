@@ -17,7 +17,7 @@ function App() {
         <BrowserRouter>
             <Navbar />
             <Grid container justify={'center'}>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <Switch>
                         <Route exact path={'/'}>          <HomePage />      </Route>
                         <Route exact path={'/about'}>     <AboutPage />     </Route>

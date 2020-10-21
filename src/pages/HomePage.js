@@ -1,14 +1,23 @@
 import React from 'react';
-import { Typography, Paper } from '@material-ui/core';
+
+import {CardContent, Typography} from "@material-ui/core";
+import Card from "@material-ui/core/Card";
+
+import {myClasses} from "../theme";
 
 const HomePage = () => {
     document.title = "Joe's App - HomePage";
 
+    const classes = myClasses();
+
     return(
-        <Paper>
-            <Typography variant={'h1'}>Coming soon</Typography>
-            <Typography>Nothing Here</Typography>
-        </Paper>
+        <Card className={classes.main}>
+            <CardContent>
+                <Typography align={'center'} variant={'h1'}>Home</Typography>
+                <br />
+                <Typography align={'center'} >Nothing Here</Typography>
+            </CardContent>
+        </Card>
     )
 }
 
