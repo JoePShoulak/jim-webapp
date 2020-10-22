@@ -2,15 +2,11 @@ import React from 'react';
 import {Switch, Route, Redirect, BrowserRouter} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
-import HomePage      from "./pages/HomePage";
-import AboutPage     from "./pages/AboutPage";
-import FibonacciPage from './pages/FibonacciPage';
-import PisanoPage    from './pages/PisanoPage';
-import PokemonPage   from "./pages/PokemonPage";
-import WeatherPage   from "./pages/WeatherPage";
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import MainContent, {content} from "./components/MainContent";
+
+const pages = Object.keys(content)
 
 function App() {
     return (
@@ -19,13 +15,16 @@ function App() {
             <Grid container justify={'center'}>
                 <Grid item xs={8}>
                     <Switch>
-                        <Route exact path={'/'}>          <HomePage />      </Route>
-                        <Route exact path={'/about'}>     <AboutPage />     </Route>
-                        <Route exact path={'/fibonacci'}> <FibonacciPage /> </Route>
-                        <Route exact path={'/pisano'}>    <PisanoPage />    </Route>
-                        <Route exact path={'/pokemon'}>   <PokemonPage />   </Route>
-                        <Route exact path={'/weather'}>   <WeatherPage />   </Route>
-
+                        {
+                            pages.map((page) => {
+                                const url = ((page === 'home') ? ('/') : (`/${page}`))
+                                return (
+                                    <Route exact key={page} path={url}>
+                                        <MainContent title={page} />
+                                    </Route>
+                                )
+                            })
+                        }
                         <Redirect to={"/"} />
                     </Switch>
 

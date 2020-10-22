@@ -4,7 +4,7 @@ import Table from "@material-ui/core/Table";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 
-const PisanoTable = (props) => {
+const PisanoArray = (props) => {
     let rKey = 0;
 
     return(
@@ -28,4 +28,4 @@ const PisanoTable = (props) => {
     )
 }
 
-export default PisanoTable;
+export default PisanoArray;

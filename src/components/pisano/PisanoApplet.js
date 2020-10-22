@@ -1,35 +1,47 @@
-import React, {useState} from 'react';
+import React from 'react';
 import _ from 'lodash';
 
 import {makeTable}  from "../../helpers/mathHelper";
-import PisanoTable  from "./PisanoTable";
-import ErrorMessage from "../ErrorMessage";
-import PisanoInput from "./PisanoInput";
+import PisanoArray  from "./PisanoArray";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
+import {useDispatch, useSelector} from "react-redux";
+import {setHeight, setModulus} from "../../redux/actions/pisanoActions";
+
+// TODO: Implement redux error handling, Material UI snack bar
 
 const PisanoApplet = () => {
-    const [height,   setHeight] = useState(5);
-    const [modulus, setModulus] = useState(10);
+    const dispatch = useDispatch();
+    const pisanoState = useSelector((state) => state.PisanoReducer)
 
-    const [table, period] = makeTable(modulus, height);
+    console.log("pS.modulus: ", pisanoState.modulus)
+
+    const [table, period] = makeTable(pisanoState.modulus, pisanoState.height);
     const validArray = !_.includes(_.flatten(table), undefined);
 
     return(
         <Card>
             <CardContent>
-            <Typography>The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}</Typography>
+                <Typography>
+                    The Pisano Period of the Fibonacci numbers modulus {pisanoState.modulus} is {period}
+                </Typography>
 
-            <PisanoInput label={"Modulus"} value={modulus}
-                         func={(e) => {setModulus(e.target.value >= 2 ? e.target.value : 2) }}
-            />
+                <label>Modulus</label>
+                <input type={'number'}
+                       value={pisanoState.modulus}
+                       min={2}
+                       onChange={(e) => {dispatch(setModulus(e.target.value))}}
+                />
+                <br />
+                <label>Height</label>
+                <input type={'number'}
+                       value={pisanoState.height}
+                       min={2}
+                       onChange={(e) => {dispatch(setHeight(e.target.value))}}
+                />
 
-            <PisanoInput label={"Height"} value={height}
-                         func={(e) => {setHeight(e.target.value >= 2 ? e.target.value : 2) }}
-            />
-
-            {validArray ? <PisanoTable table={table}/> : <ErrorMessage type={"INVALID-ARRAY"}/>}
+                {validArray ? <PisanoArray table={table}/> : <Typography>Invalid Pisano Array</Typography>}
             </CardContent>
         </Card>
     )

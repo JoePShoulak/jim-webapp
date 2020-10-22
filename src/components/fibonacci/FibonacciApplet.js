@@ -1,20 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {fibGen} from "../../helpers/mathHelper";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
+import {useDispatch, useSelector} from "react-redux";
+import {setCount} from "../../redux/actions/fibonacciActions";
+
+// TODO: Implement redux error handling, Material UI snack bar
 
 const FibonacciApplet = () => {
-    const [count, setCount] = useState(1);
+    const dispatch = useDispatch();
+    const fibonacciState = useSelector((state) => state.FibonacciReducer)
 
     return(
-        <Card>
+        <Card style={{
+
+        }}>
             <CardContent>
-                <Typography>Fibonacci number {count} is: {fibGen(count)}</Typography>
+                <Typography>Fibonacci number {fibonacciState.count} is: {fibGen(fibonacciState.count)}</Typography>
 
                 <input type={"number"}
-                       value={count}
-                       onChange={(e) => setCount(parseInt(e.target.value))} />
+                       value={fibonacciState.count}
+                       onChange={(e) => dispatch(setCount(e.target.value))} />
             </CardContent>
         </Card>
     );

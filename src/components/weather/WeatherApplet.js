@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+
+import {Card} from "@material-ui/core";
+import {CardContent} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
+
+// TODO: Implement redux error/loading handling, Material UI snack bar
 
 const WeatherApplet = () => {
     const [weather, setWeather] = useState(undefined);
