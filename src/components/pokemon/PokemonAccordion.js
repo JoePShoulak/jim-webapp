@@ -14,7 +14,7 @@ const PokemonAccordion = (props) => {
     const classes = myClasses()
 
     const dispatch = useDispatch();
-    const pokemonState = useSelector((state) => state.PokemonReducer)
+    const pokemonState = useSelector((state) => state.pokemonReducer)
 
     const handleChange = (panel) => (event, isExpanded) => {
         dispatch(setExpanded(isExpanded ? panel : false));

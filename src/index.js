@@ -11,6 +11,7 @@ import theme from './theme'
 import rootReducer from "./redux/reducers/_rootReducer";
 import thunk from "redux-thunk";
 import {Provider} from "react-redux";
+import Grid from "@material-ui/core/Grid";
 
 const store = createStore(
     rootReducer,

@@ -10,7 +10,7 @@ import {setCount} from "../../redux/actions/fibonacciActions";
 
 const FibonacciApplet = () => {
     const dispatch = useDispatch();
-    const fibonacciState = useSelector((state) => state.FibonacciReducer)
+    const fibonacciState = useSelector((state) => state.fibonacciReducer)
 
     return(
         <Card style={{

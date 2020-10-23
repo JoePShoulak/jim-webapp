@@ -5,7 +5,7 @@ const defaultState = {
     filter: ''
 }
 
-const PokemonReducer = (state = defaultState, action) => {
+const pokemonReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SET_EXPANDED_ACCORDION":
             return {
@@ -32,4 +32,4 @@ const PokemonReducer = (state = defaultState, action) => {
     }
 }
 
-export default PokemonReducer;
+export default pokemonReducer;

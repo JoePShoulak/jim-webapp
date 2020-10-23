@@ -3,7 +3,7 @@ const defaultState ={
     height: 5,
 }
 
-const PisanoReducer = (state = defaultState, action) => {
+const pisanoReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SET_MODULUS":
             return {
@@ -20,4 +20,4 @@ const PisanoReducer = (state = defaultState, action) => {
     }
 }
 
-export default PisanoReducer;
+export default pisanoReducer;

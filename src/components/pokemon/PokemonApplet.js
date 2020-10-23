@@ -1,10 +1,10 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import Toolbar from "@material-ui/core/Toolbar";
 import PokemonAccordion from "./PokemonAccordion";
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {setFilter, setPokemonData} from "../../redux/actions/pokemonActions";
-import {pokeApi, pokemonSpriteUrl} from "../../helpers/linkHelper";
+import {pokeApi, pokemonSprite} from "../../helpers/linkHelper";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search"
 import {myClasses} from "../../theme";
@@ -13,11 +13,9 @@ import _ from 'lodash'
 
 const PokemonApplet = () => {
     const dispatch = useDispatch();
-    const pokemonState = useSelector((state) => state.PokemonReducer)
+    const pokemonState = useSelector((state) => state.pokemonReducer)
 
     const classes = myClasses()
-
-    const stableDispatch = useCallback(dispatch, []) // fixes useEffect hook dependency issue
 
     useEffect(() => {
         axios
@@ -30,12 +28,12 @@ const PokemonApplet = () => {
                     newPokemonData[index + 1] = {
                         id: index+1,
                         name: pokemon.name,
-                        spriteLink: `${pokemonSpriteUrl}/${index+1}.png`
+                        spriteLink: `${pokemonSprite}/${index+1}.png`
                     }
                 })
-                stableDispatch(setPokemonData(newPokemonData))
+                dispatch(setPokemonData(newPokemonData))
             })
-    }, [stableDispatch])
+    }, [dispatch])
 
     return (
         <>

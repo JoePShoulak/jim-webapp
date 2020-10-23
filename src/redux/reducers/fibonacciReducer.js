@@ -3,7 +3,7 @@ const defaultState ={
     fibNum: 1,
 }
 
-const FibonacciReducer = (state = defaultState, action) => {
+const fibonacciReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SET_COUNT":
             return {
@@ -15,4 +15,4 @@ const FibonacciReducer = (state = defaultState, action) => {
     }
 }
 
-export default FibonacciReducer;
+export default fibonacciReducer;

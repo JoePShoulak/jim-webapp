@@ -13,7 +13,7 @@ import {setHeight, setModulus} from "../../redux/actions/pisanoActions";
 
 const PisanoApplet = () => {
     const dispatch = useDispatch();
-    const pisanoState = useSelector((state) => state.PisanoReducer)
+    const pisanoState = useSelector((state) => state.pisanoReducer)
 
     console.log("pS.modulus: ", pisanoState.modulus)
 

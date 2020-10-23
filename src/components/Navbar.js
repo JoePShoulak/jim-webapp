@@ -23,7 +23,7 @@ const Navbar = () => {
                     {
                         pages.map((page) => {
                             const path = (page === 'home') ? ('/') : `${page}`
-                            return <Tab label={_.capitalize(page)} onClick={() => {goTo(path)}}/>
+                            return <Tab key={page} label={_.capitalize(page)} onClick={() => {goTo(path)}}/>
                         })
                     }
                 </Tabs>

@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 
 const PokemonDetails = () => {
-    const pokemonState = useSelector((state) => state.PokemonReducer)
+    const pokemonState = useSelector((state) => state.pokemonReducer)
 
     const pokemon = pokemonState.currentPokemonData
 

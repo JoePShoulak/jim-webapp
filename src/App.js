@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MainContent, {content} from "./components/MainContent";
+import NavDrawer from "./components/NavDrawer";
 
 const pages = Object.keys(content)
 
@@ -12,6 +13,7 @@ function App() {
     return (
         <BrowserRouter>
             <Navbar />
+            <NavDrawer />
             <Grid container justify={'center'}>
                 <Grid item xs={8}>
                     <Switch>

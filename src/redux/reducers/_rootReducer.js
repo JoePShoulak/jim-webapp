@@ -1,12 +1,14 @@
 import {combineReducers} from "redux";
-import FibonacciReducer from "./fibonacciReducer";
-import PisanoReducer from "./pisanoReducer";
-import PokemonReducer from "./pokemonReducer";
+import fibonacciReducer from "./fibonacciReducer";
+import pisanoReducer from "./pisanoReducer";
+import pokemonReducer from "./pokemonReducer";
+import weatherReducer from "./weatherReducer";
 
 const rootReducer = combineReducers({
-    FibonacciReducer,
-    PisanoReducer,
-    PokemonReducer
+    fibonacciReducer,
+    pisanoReducer,
+    pokemonReducer,
+    weatherReducer
 })
 
 export default rootReducer
