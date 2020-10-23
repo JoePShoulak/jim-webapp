@@ -20,14 +20,19 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import theme, {myClasses} from "../theme";
 import {useHistory} from "react-router-dom";
+import App from "../App";
 
 const pages = [
     ['Home', 'About'],
     ['Fibonacci', 'Pisano', 'Pokemon', 'Weather']
 ];
 
-const NavDrawer = () => {
+const AppWrapper = () => {
     let history = useHistory();
+
+    let currentPath = history.location.pathname
+    currentPath = (currentPath === '/') ? '/home' : currentPath
+    const currentPageName = _.capitalize(currentPath.slice(1))
 
     const classes = myClasses()
     const [open, setOpen] = React.useState(false);
@@ -65,7 +70,7 @@ const NavDrawer = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Persistent drawer
+                        {currentPageName}
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -107,9 +112,12 @@ const NavDrawer = () => {
                 })}
             >
                 <div className={classes.drawerHeader} />
+
+                <App />
+
             </main>
         </div>
     );
 }
 
-export default NavDrawer
+export default AppWrapper

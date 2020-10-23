@@ -6,12 +6,12 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import {ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import App from './App';
 import theme from './theme'
 import rootReducer from "./redux/reducers/_rootReducer";
 import thunk from "redux-thunk";
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
+import AppWrapper from "./components/AppWrapper";
 
 const store = createStore(
     rootReducer,
@@ -23,7 +23,7 @@ ReactDOM.render(
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <BrowserRouter>
-                <App />
+                <AppWrapper />
             </BrowserRouter>
         </ThemeProvider>
     </Provider>,

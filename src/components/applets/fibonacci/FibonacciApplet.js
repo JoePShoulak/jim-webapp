@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import {useDispatch, useSelector} from "react-redux";
 import {setCount} from "../../../redux/actions/fibonacciActions";
+import Hidden from "@material-ui/core/Hidden";
 
 // TODO: Implement redux error handling, Material UI snack bar
 
@@ -12,12 +13,29 @@ const FibonacciApplet = () => {
     const dispatch = useDispatch();
     const fibonacciState = useSelector((state) => state.fibonacciReducer)
 
-    return(
-        <Card style={{
+    let fitsRange = Math.abs(fibonacciState.count) < 1477
 
-        }}>
-            <CardContent>
-                <Typography>Fibonacci number {fibonacciState.count} is: {fibGen(fibonacciState.count)}</Typography>
+    let result
+    result = (fitsRange) ? (
+        <Typography display={'inline'}>{fibGen(fibonacciState.count)}</Typography>
+    ) : (
+        <Typography display={'inline'} style={{color: '#F00'}}>{"Too big to calculate"}</Typography>
+    )
+
+    // TODO: Handle numbers that require scientific notation better
+
+    return(
+        <Card style={{maxWidth: 500}}>
+            {console.log(this)}
+            <CardContent style={{textAlign: 'center'}}>
+                <Hidden xsDown>
+                    <Typography display={'inline'}>Fibonacci number {fibonacciState.count} is: </Typography>
+                </Hidden>
+                <Hidden smUp>
+                    <Typography display={'inline'}>Fn({fibonacciState.count}) = </Typography>
+                </Hidden>
+                {result}
+                <br />
 
                 <input type={"number"}
                        value={fibonacciState.count}

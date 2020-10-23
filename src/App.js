@@ -3,7 +3,6 @@ import {Switch, Route, Redirect} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 import MainContent, {content} from "./components/MainContent";
-import NavDrawer from "./components/NavDrawer";
 
 const pages = Object.keys(content)
 
@@ -11,9 +10,8 @@ function App() {
 
     return (
         <>
-            <NavDrawer/>
-            <Grid container justify={'center'}>
-                <Grid item xs={8}>
+            <Grid container justify={'center'} style={{minWidth: 500}}>
+                <Grid item xs={8} align={'center'}>
                     <Switch>
                         {   pages.map((page) => {
                             const url = ((page === 'home') ? ('/') : (`/${page}`))

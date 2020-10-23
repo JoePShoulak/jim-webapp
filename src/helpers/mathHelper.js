@@ -3,11 +3,24 @@ const fibGen = (n) => {
     let fibCurrent = 1;
     let fibNext = 1;
 
-    for (let i=2; i<n; i++) {
+    let newN;
+    let negative = false;
+
+    if (n<0) {
+        newN = -n
+        negative = true
+    } else {
+        newN = n
+    }
+
+    for (let i=2; i<newN; i++) {
         fibPrevious = fibCurrent;
         fibCurrent = fibNext;
         fibNext = (fibCurrent + fibPrevious);
     }
+
+    fibNext = (n === 0) ? 0 : fibNext
+    fibNext = negative ? fibNext*(-Math.pow(-1, newN % 2)) : fibNext
 
     return fibNext;
 }

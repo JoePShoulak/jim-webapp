@@ -20,7 +20,7 @@ const PisanoApplet = () => {
 
     return(
         <Card>
-            <CardContent>
+            <CardContent style={{textAlign: 'center'}}>
                 <Typography>
                     The Pisano Period of the Fibonacci numbers modulus {pisanoState.modulus} is {period}
                 </Typography>
