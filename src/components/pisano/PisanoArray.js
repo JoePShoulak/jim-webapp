@@ -1,8 +1,11 @@
 import React from "react";
-import {TableBody, TableContainer} from "@material-ui/core";
-import Table from "@material-ui/core/Table";
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
+
+import {
+    Table,
+    TableContainer,
+    TableBody,
+    TableRow,
+    TableCell } from '@material-ui/core'
 
 const PisanoArray = (props) => {
     let rKey = 0;

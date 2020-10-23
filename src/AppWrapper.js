@@ -3,6 +3,8 @@ import React from 'react';
 import _ from 'lodash';
 import clsx from 'clsx';
 
+import {useHistory} from "react-router-dom";
+
 import {
     Drawer,
     CssBaseline,
@@ -18,9 +20,9 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import theme, {myClasses} from "../theme";
-import {useHistory} from "react-router-dom";
-import App from "../App";
+
+import theme, {myClasses} from "./theme";
+import App from "./App";
 
 const pages = [
     ['Home', 'About'],

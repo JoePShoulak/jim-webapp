@@ -1,12 +1,16 @@
 import React from 'react';
-import {fibGen} from "../../../helpers/mathHelper";
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import CardContent from "@material-ui/core/CardContent";
+
 import {useDispatch, useSelector} from "react-redux";
-import {setCount} from "../../../redux/actions/fibonacciActions";
-import Hidden from "@material-ui/core/Hidden";
-import {setSnackbar} from "../../../redux/actions/snackbarActions";
+
+import {
+    Card,
+    CardContent,
+    Typography,
+    Hidden } from "@material-ui/core";
+
+import {fibGen} from "../../helpers/mathHelper";
+import {setCount} from "../../redux/actions/fibonacciActions";
+import {setSnackbar} from "../../redux/actions/snackbarActions";
 
 // TODO: Implement redux error handling, Material UI snack bar
 
@@ -20,7 +24,7 @@ const FibonacciApplet = () => {
     let result
 
     if (fitsRange) {
-       result = <Typography display={'inline'}>{fibGen(fibonacciState.count)}</Typography>
+        result = <Typography display={'inline'}>{fibGen(fibonacciState.count)}</Typography>
     } else {
         result = <Typography display={'inline'} style={{color: '#F44336'}}>{"error"}</Typography>
         const errorMsg = `Error: number is too ${positive ? 'big' : 'small'} to calculate`

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 
 import _ from 'lodash'
 import axios from "axios";
+
 import {useDispatch, useSelector} from "react-redux";
 
 import SearchIcon from "@material-ui/icons/Search"
@@ -9,9 +10,9 @@ import {Toolbar, TextField, Paper} from "@material-ui/core";
 
 import PokemonAccordion from "./PokemonAccordion";
 
-import {myClasses} from "../../../theme";
-import {pokeApi, pokemonSprite} from "../../../helpers/linkHelper";
-import {setFilter, setPokemonData} from "../../../redux/actions/pokemonActions";
+import {myClasses} from "../../theme";
+import {pokeApi, pokemonSprite} from "../../helpers/linkHelper";
+import {setFilter, setPokemonData} from "../../redux/actions/pokemonActions";
 
 const PokemonApplet = () => {
     const dispatch = useDispatch();

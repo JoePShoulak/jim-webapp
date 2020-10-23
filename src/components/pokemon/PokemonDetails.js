@@ -1,7 +1,10 @@
-import {useSelector} from "react-redux";
-import _ from "lodash";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
+
+import _ from "lodash";
+
+import {useSelector} from "react-redux";
+
+import Typography from "@material-ui/core/Typography";
 
 const PokemonDetails = () => {
     const pokemonState = useSelector((state) => state.pokemonReducer)

@@ -1,11 +1,14 @@
 import React from 'react';
-import {Switch, Route, Redirect} from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
 
-import MainContent, {content} from "./components/MainContent";
+import {useDispatch, useSelector} from "react-redux";
+
+import {Switch, Route, Redirect} from "react-router-dom";
+
+import Grid from "@material-ui/core/Grid";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import {useDispatch, useSelector} from "react-redux";
+
+import MainContent, {content} from "./MainContent";
 import {setSnackbar} from "./redux/actions/snackbarActions";
 
 const pages = Object.keys(content)

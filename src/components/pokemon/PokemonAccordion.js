@@ -1,14 +1,20 @@
 import React from 'react'
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import _ from 'lodash'
-import {myClasses} from "../../../theme";
-import Typography from "@material-ui/core/Typography";
+
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPokemonData, setExpanded} from "../../../redux/actions/pokemonActions";
+
+import { Accordion,
+    AccordionSummary,
+    AccordionDetails,
+    Typography } from '@material-ui/core';
+
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import PokemonDetails from "./PokemonDetails";
+
+import {myClasses} from "../../theme";
+import {setCurrentPokemonData, setExpanded} from "../../redux/actions/pokemonActions";
 
 const PokemonAccordion = (props) => {
     const classes = myClasses()

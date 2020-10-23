@@ -1,14 +1,19 @@
 import React from 'react';
+
 import _ from 'lodash';
 
-import {makeTable}  from "../../../helpers/mathHelper";
-import PisanoArray  from "./PisanoArray";
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import CardContent from "@material-ui/core/CardContent";
 import {useDispatch, useSelector} from "react-redux";
-import {setHeight, setModulus} from "../../../redux/actions/pisanoActions";
-import {setSnackbar} from "../../../redux/actions/snackbarActions";
+
+import {
+    Card,
+    CardContent,
+    Typography } from "@material-ui/core";
+
+import PisanoArray  from "./PisanoArray";
+
+import {makeTable}  from "../../helpers/mathHelper";
+import {setSnackbar} from "../../redux/actions/snackbarActions";
+import {setHeight, setModulus} from "../../redux/actions/pisanoActions";
 
 
 // TODO: Implement redux error handling, Material UI snack bar
