@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import {useDispatch, useSelector} from "react-redux";
 import {setHeight, setModulus} from "../../../redux/actions/pisanoActions";
+import {setSnackbar} from "../../../redux/actions/snackbarActions";
+
 
 // TODO: Implement redux error handling, Material UI snack bar
 
@@ -15,31 +17,58 @@ const PisanoApplet = () => {
     const dispatch = useDispatch();
     const pisanoState = useSelector((state) => state.pisanoReducer)
 
-    const [table, period] = makeTable(pisanoState.modulus, pisanoState.height);
-    const validArray = !_.includes(_.flatten(table), undefined);
+    const modulus = pisanoState.modulus
+    const height = pisanoState.height
+
+    let table, period, validArray, errorMsg
+
+    if (modulus >= 3 && height >= 2) {
+        [table, period] = makeTable(modulus, height);
+        if (_.includes(_.flatten(table), undefined)) {
+            validArray = false
+            errorMsg = 'Error: Height not a factor of period'
+        } else {
+            validArray = true
+            errorMsg = ''
+        }
+    } else {
+        [table, period] = [undefined, undefined]
+        validArray = false
+        errorMsg = 'Error: Invalid parameters'
+    }
+
+    if (!validArray) {
+        dispatch(setSnackbar(true, 'error', errorMsg))
+    }
 
     return(
         <Card>
             <CardContent style={{textAlign: 'center'}}>
                 <Typography>
-                    The Pisano Period of the Fibonacci numbers modulus {pisanoState.modulus} is {period}
+                    The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}
                 </Typography>
 
-                <label>Modulus</label>
+                <Typography display={'inline'} style={{width: 100}}>Modulus: </Typography>
                 <input type={'number'}
-                       value={pisanoState.modulus}
-                       min={2}
-                       onChange={(e) => {dispatch(setModulus(e.target.value))}}
+                       value={modulus}
+                       min={3}
+                       onChange={(e) => {
+                           dispatch(setSnackbar(false, '', ''))
+                           dispatch(setModulus(e.target.value))}}
                 />
                 <br />
-                <label>Height</label>
+                <Typography display={'inline'} style={{width: 100}}>Height: </Typography>
                 <input type={'number'}
-                       value={pisanoState.height}
+                       value={height}
                        min={2}
-                       onChange={(e) => {dispatch(setHeight(e.target.value))}}
+                       onChange={(e) => {
+                           dispatch(setSnackbar(false, '', ''))
+                           dispatch(setHeight(e.target.value))}}
                 />
+                <br />
+                <br />
 
-                {validArray ? <PisanoArray table={table}/> : <Typography>Invalid Pisano Array</Typography>}
+                {validArray && <PisanoArray table={table}/> }
             </CardContent>
         </Card>
     )

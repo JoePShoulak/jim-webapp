@@ -3,15 +3,15 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 
-const AboutApplet = () => {
+const TestApplet = () => {
 
     return(
         <Card>
             <CardContent>
-                <Typography>Also nothing here yet</Typography>
+                <Typography>Test page</Typography>
             </CardContent>
         </Card>
     );
 };
 
-export default AboutApplet;
+export default TestApplet;

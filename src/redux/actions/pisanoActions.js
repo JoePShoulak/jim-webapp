@@ -1,4 +1,6 @@
 export const setModulus = (modulus) => dispatch => {
+    console.log(modulus)
+
     dispatch({
         type: "SET_MODULUS",
         payload: {

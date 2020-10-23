@@ -18,7 +18,7 @@ const WeatherApplet = () => {
     }, []);
 
     return(
-        <Card>
+        <Card style={{maxWidth: 300}}>
             {(weather !== undefined) ? (
                 <CardContent>
                     <Typography key={"temp"}          > The temp is: {          weather.temperature}F</Typography>

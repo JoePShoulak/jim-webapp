@@ -25,7 +25,6 @@ const FibonacciApplet = () => {
         result = <Typography display={'inline'} style={{color: '#F44336'}}>{"error"}</Typography>
         const errorMsg = `Error: number is too ${positive ? 'big' : 'small'} to calculate`
         dispatch(setSnackbar(true, 'error', errorMsg))
-        console.log('snackbar should be open')
     }
 
     // TODO: Handle numbers that require scientific notation better

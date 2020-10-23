@@ -24,8 +24,8 @@ function App() {
 
     return (
         <>
-            <Grid container justify={'center'} style={{minWidth: 300}}>
-                <Grid item xs={8} align={'center'} alignItems={'center'}>
+            <Grid container alignItems={'center'} justify={'center'} style={{minWidth: 300}}>
+                <Grid item xs={12} align={'center'}>
                     <Switch>
                         {   pages.map((page) => {
                             const url = ((page === 'home') ? ('/') : (`/${page}`))

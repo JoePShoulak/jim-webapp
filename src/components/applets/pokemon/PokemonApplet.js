@@ -40,9 +40,8 @@ const PokemonApplet = () => {
     return (
         <>
             <br />
-            <Paper>
+            <Paper style={{minWidth: 250}}>
                 <Toolbar
-                    className={classes.pokemonToolbar}
                     style={{
                         padding: 10,
                         justifyContent: 'center'

@@ -32,7 +32,7 @@ const AppWrapper = () => {
 
     let currentPath = history.location.pathname
     currentPath = (currentPath === '/') ? '/home' : currentPath
-    const currentPageName = _.capitalize(currentPath.slice(1))
+    let currentPageName = _.capitalize(currentPath.slice(1))
 
     const classes = myClasses()
     const [open, setOpen] = React.useState(false);
