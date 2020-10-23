@@ -78,7 +78,7 @@ const AppWrapper = () => {
             </AppBar>
             <Drawer
                 className={classes.drawer}
-                variant="persistent" // TODO: Change to temporary
+                variant="persistent"
                 anchor="left"
                 open={open}
                 classes={{
@@ -112,6 +112,7 @@ const AppWrapper = () => {
                 className={clsx(classes.content, {
                     [classes.contentShift]: open,
                 })}
+                onClick={handleDrawerClose}
             >
                 <div className={classes.drawerHeader} />
 

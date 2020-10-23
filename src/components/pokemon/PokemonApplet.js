@@ -40,10 +40,11 @@ const PokemonApplet = () => {
 
 
     // Todo: handle loading better. Toolbar loads in before items do
+    console.log(pokemonState.data)
     return (
         <>
             <br />
-            <Paper style={{minWidth: 250}}>
+            {pokemonState.data && (<Paper style={{minWidth: 250}}>
                 <Toolbar
                     style={{
                         padding: 10,
@@ -61,7 +62,7 @@ const PokemonApplet = () => {
                         />
                     </div>
                 </Toolbar>
-            </Paper>
+            </Paper>)} {/* TODO: why doesn't this work */}
             <br />
 
             { Object.keys(pokemonState.data).map((pokemonId) => {
