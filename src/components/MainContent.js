@@ -5,12 +5,12 @@ import {myClasses} from "../theme";
 import _ from 'lodash';
 import Card from "@material-ui/core/Card";
 
-import FibonacciApplet from "./fibonacci/FibonacciApplet";
-import PisanoApplet from "./pisano/PisanoApplet";
-import PokemonApplet from "./pokemon/PokemonApplet";
-import WeatherApplet from "./weather/WeatherApplet";
-import HomeApplet from "./home/HomeApplet";
-import AboutApplet from "./about/AboutApplet";
+import FibonacciApplet from "./applets/fibonacci/FibonacciApplet";
+import PisanoApplet from "./applets/pisano/PisanoApplet";
+import PokemonApplet from "./applets/pokemon/PokemonApplet";
+import WeatherApplet from "./applets/weather/WeatherApplet";
+import HomeApplet from "./applets/home/HomeApplet";
+import AboutApplet from "./applets/about/AboutApplet";
 
 const content = {
     'home': <HomeApplet />,

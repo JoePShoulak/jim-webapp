@@ -3,11 +3,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import PokemonAccordion from "./PokemonAccordion";
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
-import {setFilter, setPokemonData} from "../../redux/actions/pokemonActions";
-import {pokeApi, pokemonSprite} from "../../helpers/linkHelper";
+import {setFilter, setPokemonData} from "../../../redux/actions/pokemonActions";
+import {pokeApi, pokemonSprite} from "../../../helpers/linkHelper";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search"
-import {myClasses} from "../../theme";
+import {myClasses} from "../../../theme";
 import Card from "@material-ui/core/Card";
 import _ from 'lodash'
 

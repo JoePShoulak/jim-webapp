@@ -4,10 +4,10 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import _ from 'lodash'
-import {myClasses} from "../../theme";
+import {myClasses} from "../../../theme";
 import Typography from "@material-ui/core/Typography";
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPokemonData, setExpanded} from "../../redux/actions/pokemonActions";
+import {setCurrentPokemonData, setExpanded} from "../../../redux/actions/pokemonActions";
 import PokemonDetails from "./PokemonDetails";
 
 const PokemonAccordion = (props) => {

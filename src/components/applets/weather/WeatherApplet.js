@@ -4,7 +4,7 @@ import axios from "axios";
 import {Card} from "@material-ui/core";
 import {CardContent} from "@material-ui/core";
 import {Typography} from "@material-ui/core";
-import {weatherApi} from "../../helpers/linkHelper";
+import {weatherApi} from "../../../helpers/linkHelper";
 
 const WeatherApplet = () => {
     const [weather, setWeather] = useState(undefined);
