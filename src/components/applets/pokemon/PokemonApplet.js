@@ -1,15 +1,17 @@
 import React, {useEffect} from 'react';
-import Toolbar from "@material-ui/core/Toolbar";
-import PokemonAccordion from "./PokemonAccordion";
+
+import _ from 'lodash'
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
-import {setFilter, setPokemonData} from "../../../redux/actions/pokemonActions";
-import {pokeApi, pokemonSprite} from "../../../helpers/linkHelper";
-import TextField from "@material-ui/core/TextField";
+
 import SearchIcon from "@material-ui/icons/Search"
+import {Toolbar, TextField, Paper} from "@material-ui/core";
+
+import PokemonAccordion from "./PokemonAccordion";
+
 import {myClasses} from "../../../theme";
-import Card from "@material-ui/core/Card";
-import _ from 'lodash'
+import {pokeApi, pokemonSprite} from "../../../helpers/linkHelper";
+import {setFilter, setPokemonData} from "../../../redux/actions/pokemonActions";
 
 const PokemonApplet = () => {
     const dispatch = useDispatch();
@@ -38,9 +40,13 @@ const PokemonApplet = () => {
     return (
         <>
             <br />
-            <Card>
+            <Paper>
                 <Toolbar
-                    className={classes.pokemonToolbar} style={{justifyContent: 'center'}}>
+                    className={classes.pokemonToolbar}
+                    style={{
+                        padding: 10,
+                        justifyContent: 'center'
+                    }}>
                     <div className={classes.searchContainer}>
                         <SearchIcon className={classes.searchIcon}/>
                         <TextField
@@ -50,15 +56,16 @@ const PokemonApplet = () => {
                             onChange={(e) => {
                                 dispatch(setFilter(e.target.value))
                             }}
-                            />
+                        />
                     </div>
                 </Toolbar>
-            </Card>
+            </Paper>
             <br />
 
             { Object.keys(pokemonState.data).map((pokemonId) => {
-                const meetsFilter = _.includes(pokemonState.data[pokemonId].name, pokemonState.filter)
-                return (meetsFilter || (pokemonState.filter === '')) && (
+                let meetsFilter = _.includes(pokemonState.data[pokemonId].name, pokemonState.filter)
+                meetsFilter = meetsFilter || (pokemonState.filter === '')
+                return meetsFilter && (
                     <PokemonAccordion key={pokemonId} pokemonId={pokemonId} />
                 )
             })}

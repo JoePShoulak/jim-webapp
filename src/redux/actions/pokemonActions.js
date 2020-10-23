@@ -36,7 +36,7 @@ export const setCurrentPokemonData = (id) => dispatch => {
                 types: data.types,
                 imageUrl: `${pokeImage}/${data.id}.png`
             }
-            console.log(pokemonData)
+
             dispatch({
                 type: "SET_CURRENT_POKEMON_DATA",
                 payload: pokemonData

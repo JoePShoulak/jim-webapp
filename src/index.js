@@ -11,7 +11,7 @@ import theme from './theme'
 import rootReducer from "./redux/reducers/_rootReducer";
 import thunk from "redux-thunk";
 import {Provider} from "react-redux";
-import Grid from "@material-ui/core/Grid";
+import {BrowserRouter} from "react-router-dom";
 
 const store = createStore(
     rootReducer,
@@ -22,8 +22,10 @@ ReactDOM.render(
     <Provider store={store}>
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <App />
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         </ThemeProvider>
     </Provider>,
-document.getElementById('root')
+    document.getElementById('root')
 );

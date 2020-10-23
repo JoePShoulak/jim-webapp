@@ -15,8 +15,6 @@ const PisanoApplet = () => {
     const dispatch = useDispatch();
     const pisanoState = useSelector((state) => state.pisanoReducer)
 
-    console.log("pS.modulus: ", pisanoState.modulus)
-
     const [table, period] = makeTable(pisanoState.modulus, pisanoState.height);
     const validArray = !_.includes(_.flatten(table), undefined);
 
