@@ -2,7 +2,7 @@ import {fade} from "@material-ui/core"
 
 import {createMuiTheme, makeStyles} from "@material-ui/core/styles";
 
-const drawerWidth = 150;
+const drawerWidth = 135;
 
 const theme = createMuiTheme({
     palette: {

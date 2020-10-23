@@ -20,7 +20,13 @@ const PisanoArray = (props) => {
                         return (
                             <TableRow key={rKey++}>
                                 {row.map((cell) => {
-                                    return (<TableCell align={'center'} key={cKey++}>{cell}</TableCell>)
+                                    return (
+                                        <TableCell
+                                            align={'center'}
+                                            key={cKey++}>
+                                            {cell}
+                                        </TableCell>
+                                    )
                                 })}
                             </TableRow>
                         )

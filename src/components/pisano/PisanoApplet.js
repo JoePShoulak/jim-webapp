@@ -47,7 +47,7 @@ const PisanoApplet = () => {
     }
 
     return(
-        <Card>
+        <Card style={{maxWidth: 800}}>
             <CardContent style={{textAlign: 'center'}}>
                 <Typography>
                     The Pisano Period of the Fibonacci numbers modulus {modulus} is {period}

@@ -61,7 +61,7 @@ const AppWrapper = () => {
                     [classes.appBarShift]: open,
                 })}
             >
-                <Toolbar>
+                <Toolbar> {/* TODO: CSS doesn't work on Heroku, toolbar doesn't shift */}
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -72,13 +72,13 @@ const AppWrapper = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        {currentPageName}
+                        {currentPageName} {/* TODO: Doesn't update until drawer close */}
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Drawer
                 className={classes.drawer}
-                variant="persistent"
+                variant="persistent" // TODO: Change to temporary
                 anchor="left"
                 open={open}
                 classes={{

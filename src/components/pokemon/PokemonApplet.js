@@ -38,6 +38,8 @@ const PokemonApplet = () => {
             })
     }, [dispatch])
 
+
+    // Todo: handle loading better. Toolbar loads in before items do
     return (
         <>
             <br />
