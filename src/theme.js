@@ -63,10 +63,6 @@ const myClasses = makeStyles(theme => ({
         marginBottom: 'auto'
     },
 
-    pokemonToolbar: {
-        margin: 15
-    },
-
     searchContainer: {
         display: 'flex',
         backgroundColor: fade(theme.palette.common.white, 0.15),
