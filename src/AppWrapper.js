@@ -110,7 +110,7 @@ const AppWrapper = () => {
             </Drawer>
             <main
                 className={clsx(classes.content, {[classes.contentShift]: open, })}
-                onClick={handleDrawerClose}
+                onClick={handleDrawerClose} // TODO: This doesn't fill the whole area we want clickable
             >
                 <div className={classes.drawerHeader} />
 
