@@ -1,5 +1,4 @@
 export const setSnackbar = (open, type, message) => dispatch => {
-    console.log('called')
     dispatch({
         type: "SET_SNACKBAR",
         payload: {

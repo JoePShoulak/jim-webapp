@@ -23,6 +23,7 @@ const PisanoArray = (props) => {
                                     return (
                                         <TableCell
                                             align={'center'}
+                                            size={'small'}
                                             key={cKey++}>
                                             {cell}
                                         </TableCell>

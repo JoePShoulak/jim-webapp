@@ -40,7 +40,6 @@ const PokemonApplet = () => {
 
 
     // Todo: handle loading better. Toolbar loads in before items do
-    console.log(pokemonState.data)
     return (
         <>
             <br />
@@ -76,4 +75,4 @@ const PokemonApplet = () => {
     );
 }
 
-export default PokemonApplet
+export default PokemonApplet;
