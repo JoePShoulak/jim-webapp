@@ -10,12 +10,19 @@ import Alert from "@material-ui/lab/Alert";
 
 import MainContent, {content} from "./MainContent";
 import {setSnackbar} from "./redux/actions/snackbarActions";
+import {useHistory} from "react-router";
 
 const pages = Object.keys(content)
 
 function App() {
     const dispatch = useDispatch();
     const snackbarState = useSelector((state) => state.snackbarReducer)
+
+    let history = useHistory()
+    let currentPath = history.location.pathname
+    console.log(currentPath)
+    currentPath = currentPath.slice(1)
+    document.title = `Joe's App - ${currentPath}`;
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {

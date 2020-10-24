@@ -43,7 +43,7 @@ const PokemonApplet = () => {
     return (
         <>
             <br />
-            {pokemonState.data && (<Paper style={{minWidth: 250}}>
+            {pokemonState.data && (<Paper style={{minWidth: 250, maxWidth: 800}}>
                 <Toolbar
                     style={{
                         padding: 10,

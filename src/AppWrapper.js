@@ -109,9 +109,7 @@ const AppWrapper = () => {
                 })}
             </Drawer>
             <main
-                className={clsx(classes.content, {
-                    [classes.contentShift]: open,
-                })}
+                className={clsx(classes.content, {[classes.contentShift]: open, })}
                 onClick={handleDrawerClose}
             >
                 <div className={classes.drawerHeader} />

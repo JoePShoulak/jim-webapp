@@ -6,7 +6,6 @@ import PokemonApplet from "./components/pokemon/PokemonApplet";
 import WeatherApplet from "./components/weather/WeatherApplet";
 import HomeApplet from "./components/home/HomeApplet";
 import AboutApplet from "./components/about/AboutApplet";
-import TestApplet from "./components/test/TestApplet";
 
 const content = {
     'home': <HomeApplet />,
@@ -15,14 +14,10 @@ const content = {
     'pisano': <PisanoApplet />,
     'pokemon': <PokemonApplet />,
     'weather': <WeatherApplet />,
-    'test': <TestApplet />
 }
 
 const MainContent = (props) => {
-    const title = props.title;
-    // document.title = `Joe's App - ${_.capitalize(title)}`;
-
-    return content[title]
+    return content[props.title]
 }
 
 export default MainContent;

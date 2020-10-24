@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
     applyMiddleware,
-    createStore} from "redux";
+    createStore } from "redux";
 import thunk from "redux-thunk";
 import {Provider} from "react-redux";
 import {composeWithDevTools} from "redux-devtools-extension";

@@ -35,7 +35,12 @@ const PokemonAccordion = (props) => {
             <Accordion
                 expanded={isExpanded}
                 onChange={handleChange(id)}
-                style={{minWidth: 300}}
+                style={{
+                    minWidth: 300,
+                    maxWidth: 800,
+                    paddingLeft: 20,
+                    paddingRight: 20
+                }}
                 onClick={() => {dispatch(setCurrentPokemonData(id))}}
             >
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} >
