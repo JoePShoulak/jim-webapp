@@ -1,4 +1,3 @@
-import {fade} from "@material-ui/core"
 
 import {createMuiTheme, makeStyles} from "@material-ui/core/styles";
 
@@ -6,43 +5,16 @@ const drawerWidth = 135;
 
 const theme = createMuiTheme({
     palette: {
-        type: "dark",
 
         primary: {
-            main: '#D00000',
+            main: '#F00',
         },
 
         secondary: {
-            main: '#424242'
+            main: '#0F0'
         }
     },
 
-    overrides: {
-        MuiTableCell: {
-            root: {
-                borderBottom: 'none',
-                align: 'center'
-            }
-        },
-
-        MuiCard: {
-            root: {
-                background: '#494949',
-            },
-        },
-
-        MuiAccordion: {
-            root: {
-                background: '#494949',
-            },
-        },
-
-        MuiToolbar: {
-            root: {
-                background: '#494949',
-            },
-        },
-    }
 });
 
 const myClasses = makeStyles(theme => ({
@@ -52,35 +24,7 @@ const myClasses = makeStyles(theme => ({
         marginBottom: 20,
         display: 'center',
     },
-    cardMedia: {
-        margin: 'auto'
-    },
 
-    pokemonName: {
-        fontWeight: 'bold',
-        marginTop: 'auto',
-        marginBottom: 'auto'
-    },
-
-    searchContainer: {
-        display: 'flex',
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingTop: 5,
-        paddingBottom: 5,
-    },
-
-    searchIcon: {
-        alignSelf: 'flex-end',
-        marginBottom: 15,
-    },
-
-    searchInput: {
-        width: 200,
-        marginLeft: 10,
-        marginBottom: 15,
-    },
     root: {
         display: 'flex',
     },

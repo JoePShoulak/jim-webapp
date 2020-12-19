@@ -3,11 +3,12 @@ import React from 'react';
 import {
     Card,
     CardContent,
-    Typography } from "@material-ui/core";
+    Typography
+} from "@material-ui/core";
 
 const HomeApplet = () => {
 
-    return(
+    return (
         <Card>
             <CardContent>
                 <Typography>Nothing here yet</Typography>

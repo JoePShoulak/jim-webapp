@@ -72,8 +72,8 @@ export default function FullWidthTabs() {
                     variant="fullWidth"
                     aria-label="full width tabs example"
                 >
-                    <Tab label="Biography" {...a11yProps(0)} />
-                    <Tab label="Music History" {...a11yProps(1)} />
+                    <Tab label="10 Stories" {...a11yProps(0)} />
+                    <Tab label="Highway Lights on Summer Nights" {...a11yProps(1)} />
                     <Tab label="Songs for Causes" {...a11yProps(2)} />
                 </Tabs>
             </div>

@@ -25,8 +25,7 @@ import theme, {myClasses} from "./theme";
 import App from "./App";
 
 const pages = [
-    ['Home', 'About'],
-    ['Fibonacci', 'Pisano', 'Pokemon', 'Weather']
+    ['Home', 'About', 'Albums', 'Songs', 'Shop / Content']
 ];
 
 const AppWrapper = () => {
